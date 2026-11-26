@@ -2,31 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kohs Color Cube Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kohs Block Design Library</title>
 <style>
-  body { font-family: system-ui, sans-serif; margin: 1.5rem; background: #f7f7f7; text-align: center; }
-  h1 { margin-top: 0; }
-  .controls { margin: 1rem 0; display: flex; gap: 0.75rem; justify-content: center; align-items: center; flex-wrap: wrap; }
-  select, button { font-size: 1rem; padding: 0.45rem 0.9rem; }
-  button { cursor: pointer; }
-  canvas { background: white; border: 1px solid #ccc; margin: 0.5rem auto; display: block; }
-  #caption { font-size: 1.1rem; margin-top: 0.4rem; font-weight: 500; }
+  :root {
+    --btn-bg: #fff;
+    --btn-border: #ccc;
+    --accent: #1432a0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0.75rem;
+    background: #f7f7f7;
+    text-align: center;
+    min-height: 100vh;
+  }
+  h1 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+  .top-controls {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+  }
+  select, button {
+    font-size: 1rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--btn-border);
+    border-radius: 8px;
+    background: var(--btn-bg);
+    cursor: pointer;
+  }
+  select { min-width: 8rem; }
+  #canvas-wrap {
+    width: min(92vw, 520px);
+    margin: 0 auto;
+  }
+  canvas {
+    width: 100%;
+    height: auto;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: block;
+  }
+  #caption {
+    font-size: clamp(1rem, 3.5vw, 1.15rem);
+    margin: 0.5rem 0 0.8rem;
+    font-weight: 500;
+  }
+  .roll-wrap {
+    margin: 0.6rem 0 1.2rem;
+  }
+  #rollBtn {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    padding: 0.4rem 1.4rem;
+    border-radius: 16px;
+    border: 2px solid var(--accent);
+    background: #fff;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+  #rollBtn:active {
+    transform: scale(0.96);
+  }
+  @media (max-width: 480px) {
+    .top-controls { gap: 0.4rem; }
+    select, button { padding: 0.45rem 0.7rem; font-size: 0.95rem; }
+  }
 </style>
 </head>
 <body>
-<h1>Kohs Color Cube Library</h1>
+<h1>Kohs Block Design Library</h1>
 
-<div class="controls">
+<div class="top-controls">
   <label>Level:
     <select id="setSelect"></select>
   </label>
   <button id="backBtn">◀ Back</button>
-  <button id="rollBtn">Roll</button>
   <button id="nextBtn">Next ▶</button>
 </div>
 
-<canvas id="c" width="480" height="480"></canvas>
+<div id="canvas-wrap">
+  <canvas id="c" width="480" height="480"></canvas>
+</div>
 <div id="caption">Diagram 1 of 1</div>
+
+<div class="roll-wrap">
+  <button id="rollBtn" title="Roll">🎲🎲</button>
+</div>
+
+
 
 <script src="library.js"></script>
 <script>
@@ -123,13 +195,10 @@ function getAudio() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   return audioCtx;
 }
-
 function bellDing(freq = 880) {
   const ctx = getAudio();
   const now = ctx.currentTime;
   const dur = 1.4;
-
-  // Fundamental
   const o1 = ctx.createOscillator();
   const g1 = ctx.createGain();
   o1.type = "sine";
@@ -141,8 +210,6 @@ function bellDing(freq = 880) {
   g1.connect(ctx.destination);
   o1.start(now);
   o1.stop(now + dur);
-
-  // Soft harmonic for bell character
   const o2 = ctx.createOscillator();
   const g2 = ctx.createGain();
   o2.type = "sine";
@@ -163,7 +230,6 @@ let currentIndex = 0;
 function getDesigns() {
   return LIBRARY[currentLevel].slice(1);
 }
-
 function showCurrent() {
   const designs = getDesigns();
   if (!designs.length) return;
@@ -189,21 +255,19 @@ setSelect.onchange = () => {
 };
 
 document.getElementById("backBtn").onclick = () => {
-  bellDing(523);          // C5
+  bellDing(523);
   currentIndex--;
   showCurrent();
 };
-
 document.getElementById("rollBtn").onclick = () => {
-  bellDing(659);          // E5
+  bellDing(659);
   const designs = getDesigns();
   if (!designs.length) return;
   currentIndex = Math.floor(Math.random() * designs.length);
   showCurrent();
 };
-
 document.getElementById("nextBtn").onclick = () => {
-  bellDing(784);          // G5
+  bellDing(784);
   currentIndex++;
   showCurrent();
 };
