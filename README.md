@@ -10,7 +10,7 @@ Games and 3d scad projects Inspired by Samuel C. Kohs Block Design Cubes.
 The web page at https://jimb15122.github.io/Kohs/
 contains a library of over 1000 cube block design patterns organized (somewhat) by difficulty level.  The diagrams, when combined with a set of 16 original Kohs blocks, can be used for competitive game play.
 
-A color 3mf model is available for download in this repository. A pdf version can also be printed and folded.  You will need to make at least 4 cubes to start at the easy levels.  16 cubes are needed (per player) for the advanced levels.
+A color 3mf model of the required cube is available for download from this repository. A pdf version can also be printed on heavy paper and folded.  You will need to make at least 4 cubes to start at the easy levels.  16 cubes are needed (per player) for the advanced levels.
 
 Each cube has solid color side faces of red, white, blue and yellow.  The top face of the cube is divided diagonally with one side colored red and the other white.  The bottom face is likewise divided diagonally and colored blue and yellow.
 
