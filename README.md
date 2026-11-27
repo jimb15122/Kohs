@@ -1,6 +1,6 @@
 # Kohs
 Games and 3d scad projects Inspired by Samuel C. Kohs Block Design Cubes.  
-<img src="images/img_4097.png" alt="Screenshot" width="25%">
+<img src="images/img_4097.jpeg" alt="Screenshot" width="25%">
 
 The web page at https://jimb15122.github.io/Kohs/
 contains a library of over 1000 cube block design patterns organized (somewhat) by difficulty level.  The diagrams, when combined with a set of 16 original Kohs blocks, can be used for competitive game play.
