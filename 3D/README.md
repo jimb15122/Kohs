@@ -15,9 +15,9 @@ STL Format
 - kohs cube.3mf - A single full cube in 4 colors.
    - This is a GENERIC 3mf.  If used with a Bambu Studio, use IMPORT, not OPEN.
 - kohs cube-bambu.3mf - A set of print plates for Bambu A1 or larger.  
-   - Plate 1 - AMS full color plate (slow and wasteful)
-   - Plate 2 - A set of 16 male quarter parts. (white)
-   - Plate 3 - A set of 16 female quarter parts. (red)
-   - Plate 4 - A set of 16 female quarter parts. (blue)
-   - Plate 5 - A set of 16 female quarter parts. (yellow)
-   - Plate 6 - A set of tray parts. (any color)
+   - Plate 1 - AMS full color plate of 16 cubes (slow - many color changes needed)
+   - Plate 2 - A set of 16 male quarter parts. (white - no AMS)
+   - Plate 3 - A set of 16 female quarter parts. (red - no AMS)
+   - Plate 4 - A set of 16 female quarter parts. (blue - no AMS)
+   - Plate 5 - A set of 16 female quarter parts. (yellow - no AMS)
+   - Plate 6 - A set of tray parts. (any color - no AMS)
