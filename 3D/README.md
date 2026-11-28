@@ -1,4 +1,9 @@
 <h1>3d Model Files for printing Kohs Cubes</h1>
+<p align="center">
+  <a href="https://jimb15122.github.io/Kohs/">
+    <img src="Kohs Cube.png" alt="Screenshot" width=20%">
+  </a>
+</p>
 
 STL Format
 - kohs cube-male.stl - Print 16 of these per set of cubes (recommended color white)
