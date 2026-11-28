@@ -1,5 +1,5 @@
 <h1>3d Model Files for Printing Kohs Cubes</h1>
-<p align="center">
+<p align="left">
   <a href="https://jimb15122.github.io/Kohs/">
     <img src="Kohs Cube.png" alt="Screenshot" width=20%">
   </a>
