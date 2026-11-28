@@ -21,3 +21,6 @@ STL Format
    - Plate 4 - A set of 16 female quarter parts. (blue - no AMS)
    - Plate 5 - A set of 16 female quarter parts. (yellow - no AMS)
    - Plate 6 - A set of tray parts. (any color - no AMS)
+
+The cubes are sized at 20mm in all of the files.  
+- A uniform scaling factor of 127% can be applied to achieve the 1" size described in the original c1920 Kohs Block-Design paper.  
